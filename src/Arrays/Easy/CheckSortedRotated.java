@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Easy;
 
 //https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
 public class CheckSortedRotated {

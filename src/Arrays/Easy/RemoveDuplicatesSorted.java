@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Easy;
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 public class RemoveDuplicatesSorted {
     public int removeDuplicates(int[] nums) {

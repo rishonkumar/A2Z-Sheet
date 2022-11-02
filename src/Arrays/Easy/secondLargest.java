@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Easy;
 //https://practice.geeksforgeeks.org/problems/second-largest3735/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
 public class secondLargest {
     int print2largest(int arr[], int n) {
