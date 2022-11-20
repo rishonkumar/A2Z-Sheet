@@ -23,6 +23,18 @@ public class SubArraySumK {
         return cnt;
     }
 
+    public int subarraySumBF(int[] a, int t, int n) {
+        int cnt = 0;
+        for(int i = 0 ; i < n ; i++) {
+            int currSum = 0;
+            for(int j = i ; j < n ; j++) {
+                currSum += a[i];
+                if(currSum == t) return cnt;
+            }
+        }
+        return cnt;
+    }
+
     public int subarraySum(int[] nums, int k) {
 
         int ans = 0;

@@ -2,24 +2,31 @@ package HashMapProb;
 
 import java.util.HashMap;
 
-//     // https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
-public class SubArraySumKLongest {
-    // Brute Force
-    public static int longestSubArrWithSumK_BF(int[] arr, int n, int k) {
-        int maxLength = 0;
+public class LongestSubArraySumK {
+
+    int maxLength(int[] A, int n, int K) {
+        int maxLen = 0;
         for (int i = 0; i < n; i++) {
             int sum = 0;
             for (int j = i; j < n; j++) {
-                sum += arr[j];
-                if (sum == k)// cje
-                    maxLength = Math.max(maxLength, (j - i + 1));
-            }
+                sum += A[i];
 
+                if (sum == K) {
+                    maxLen = Math.max(maxLen, j - i + 1);
+                }
+            }
         }
-        return maxLength;
+        return maxLen;
     }
 
+    /*
+        IMPORTANT
+         add in map the sum and index and we store the first occurrences index(i)
+          coz we need max
+     */
+
     public int lenOfLongSubarr(int[] nums, int k) {
+        int ans = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
 
         map.put(0, 1);
@@ -37,9 +44,11 @@ public class SubArraySumKLongest {
                 if (maxLen < i - map.get(remainingSum))
                     maxLen = i - map.get(remainingSum);
             }
-            // add in map the sum and index
+            // add in map the sum and index and we store the first occurrences index(i)
+            // coz we need max
             map.put(sum, map.getOrDefault(sum, i));
         }
-        return maxLen;
+        return ans;
     }
+
 }
