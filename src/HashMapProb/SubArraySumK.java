@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class SubArraySumK {
 
     // brute-force approach - for all sum[i,j] count how many times we saw k. O(n^3)
-    public int subarraySumB(int[] a, int t) {
+    public int subArraySumB(int[] a, int t) {
 
         int n = a.length;
         int cnt = 0;
@@ -23,23 +23,24 @@ public class SubArraySumK {
         return cnt;
     }
 
-    public int subarraySumBF(int[] a, int t, int n) {
+    public int subArraySumBF(int[] a, int t, int n) {
         int cnt = 0;
-        for(int i = 0 ; i < n ; i++) {
+        for (int i = 0; i < n; i++) {
             int currSum = 0;
-            for(int j = i ; j < n ; j++) {
+            for (int j = i; j < n; j++) {
                 currSum += a[i];
-                if(currSum == t) return cnt;
+                if (currSum == t)
+                    return cnt;
             }
         }
         return cnt;
     }
 
-    public int subarraySum(int[] nums, int k) {
+    public int subArraySum(int[] nums, int k) {
 
         int ans = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
-        
+
         map.put(0, 1);
         int sum = 0;
 
