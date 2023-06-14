@@ -56,8 +56,9 @@ public class MinimumFallingPathSum {
         int op3 = solve(A, i + 1, j + 1, map);
 
         //Store the ans
-        map.put(key, A[i][j] + Math.min(op1, Math.min(op2, op3)));
+        int min = Math.min(op1, Math.min(op2, op3));
+        map.put(key, A[i][j] + min);
 
-        return A[i][j] + Math.min(op1, Math.min(op2, op3));
+        return A[i][j] + min;
     }
 }
